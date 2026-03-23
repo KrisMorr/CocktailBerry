@@ -40,6 +40,7 @@ function RecipeCalculator() {
     await confirmAndExecute(t('recipeCalculation.confirmCalculation'), async () => {
       const result = await calculateOptimal(nIngredients, 'ilp');
       setSelectedCocktails(result.cocktails.map((c) => c.id));
+      return { message: t('recipeCalculation.optimized') };
     });
   };
 

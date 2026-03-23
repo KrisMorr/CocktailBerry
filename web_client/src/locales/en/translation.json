@@ -208,7 +208,8 @@
     "cocktailsHeader": "Cocktails ({{count}} selected)",
     "numberIngredients": "Number of Ingredients:",
     "optimize": "Optimize",
-    "confirmCalculation": "This might take a while on large databases. Proceed?"
+    "confirmCalculation": "This might take a while on large databases. Proceed?",
+    "optimized": "Optimization complete"
   },
   "userDisplay": {
     "noUser": "No NFC",
