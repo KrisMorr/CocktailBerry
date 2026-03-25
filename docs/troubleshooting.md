@@ -57,7 +57,7 @@ If that's the case, please change the color codes to the hexadecimal representat
 ## Changing Volume Unit
 
 For the users of the machine, there is the possibility to set the `EXP_MAKER_UNIT` and `EXP_MAKER_FACTOR` options to change the displayed unit, for example to oz.
-Please take note that the units stored in the database are still in ml, and if inserting new recipes, you still need to provide them in ml.
+Please note that the units stored in the database are still in ml, and if inserting new recipes, you still need to provide them in ml.
 This feature is purely cosmetic and for the user of the maker tab when making cocktails, so that no calculations need to be done while making cocktails.
 
 ## Restoring Database
@@ -117,7 +117,7 @@ There is the config value `MAKER_CHECK_INTERNET`.
 If you wish to use your microservice, but have no internet at the moment, the data will be saved and sent later.
 One problem that occurred, is that, for example on a standard Raspberry Pi, the clock and therefore the timestamp will probably be wrong.
 This new option tackles that. If it's set to active with an active microservice, it will check for internet connection at startup.
-If there is no connection, a dialog will pop up and give the user the possibility to adjust the time.
+If there is no connection, a dialog will pop up and allow the user to adjust the time.
 In case the machine has an RTC built in and uses it, this option can usually be set to `false`, because due to the RTC, the time should be correct.
 
 ## Get the LED Working
@@ -181,11 +181,11 @@ You currently can't write data to the card, only reading the UID is supported.
 
 ## UI Seems Wrong on non-RaspOS System
 
-On different Linux systems (other than the recommended Raspbian OS), there may be differences in the look and functionality of the user interface.
+On different Linux systems (other than the recommended Raspberry Pi OS), there may be differences in the look and functionality of the user interface.
 This can be dependent on the flavour of Linux, as well as the desktop variant you are using.
 I had the best experience when using a LXDE/XFCE variant, for example of a Debian Linux, on a non-Raspberry Pi single board computer.
 Other desktop variants may not respect the always on top property, resulting in the taskbar showing up on top of the app when running the program and pop ups appear.
-Please take note that CocktailBerry will run on other systems than the Raspberry Pi OS and RPi, but may take some tweaking and testing in the settings.
+Please note that CocktailBerry will run on other systems than the Raspberry Pi OS and RPi, but may take some tweaking and testing in the settings.
 Since I probably don't own that combination of hardware and OS, you probably need to figure out those settings by yourself.
 If you are an inexperienced user with Linux, I recommend you stick to the recommended settings on a Pi.
 

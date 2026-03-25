@@ -327,7 +327,7 @@ def define_configuration(self):
 
 1. You need to import the `UI_LANGUAGE` object to access the dialogues
 2. If you do provide a dictionary, it needs at least the English (`en`) key!
-3. You can also just use a string in the English language, if you don't want to provide translation 
+3. You can also just use a string in the English language, if you don't want to provide translations
 
 ### Prevent Cocktail Preparation
 

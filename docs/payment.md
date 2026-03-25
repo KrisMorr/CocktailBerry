@@ -22,7 +22,7 @@ Currently, two types are supported: NFC-based payments and SumUp Terminal paymen
     - **Balance**: Each entity can have a balance, which is checked and deducted when ordering cocktails.
 
     A separate payment service needs to be installed and set up to manage the user entities.
-    There is a dedicated project and (see below) setup instructions for this service.
+    There is a dedicated project with setup instructions (see below) for this service.
 
 === "SumUp"
 
@@ -76,7 +76,7 @@ If this feature is enabled, users will need to pay before being able to order a 
     When using NFC-based payments, each user will need to have an NFC tag (e.g., card or key fob) associated with them.
     The tag will be read by the NFC reader, and the unique identifier (UID) of the tag will be sent to the CocktailBerry Manager Service.
     The Manager Service will then check if the UID is valid and if the user associated with the tag has sufficient balance to order a cocktail.
-    A Tag ID can be associated with an 18+ or younger than 18 user, allowing to restrict cocktail orders based on age.
+    A Tag ID can be associated with an 18+ or younger than 18 user, allowing you to restrict cocktail orders based on age.
     If the UID is valid and the user has sufficient balance, the order will be processed.
     The Service will take care of deducting the cocktail price from the user's balance.
     Also, managing user balances and age restrictions will be handled by the Manager Service.
@@ -184,7 +184,7 @@ The recommended way for a "basic" hardware setup is:
 === "SumUp"
     - A CocktailBerry machine + [SumUp Solo Terminal](https://store.sumup.com/de-DE/website/product-selection/card_reader.solo_bundle_cradle)
 
-    You will need a setup [sumup](https://www.sumup.com/) account for this to work.
+    You will need a [SumUp](https://www.sumup.com/) account set up for this to work.
     Once created, you will be asked multiple things during the account setup.
     When you are done, check your account settings, where you should see your Merchant Code (a string starting with "MCM").
     In addition, you will need to [create an API key](https://me.sumup.com/settings/api-keys) for your account.
@@ -241,7 +241,7 @@ The recommended way for a "basic" hardware setup is:
     You might need to restart your device after the installation is done, depending on the options you selected and your OS.
 
 === "SumUp"
-    First, you will need to provide both, the SumUp API key as well as the merchant code to CocktailBerry.
+    First, you will need to provide both the SumUp API key as well as the merchant code to CocktailBerry.
     You can enter both over the GUI, or edit the `custom_config.yaml` directly in the CocktailBerry folder, since copying the key is better.
     Look for the `PAYMENT_SUMUP_API_KEY` and `PAYMENT_SUMUP_MERCHANT_CODE` entries and set them accordingly.
     In addition, you will need to select the SumUp payment option in the GUI or set `PAYMENT_OPTION` to `SumUp` in the config file.
@@ -272,7 +272,7 @@ Some important options are:
     - **Auto Logout**: Automatically log out users after a specified time, only enable this if you are sure this time is more than enough for a user to order a cocktail.
     - **Logout after Order**: Log out the user after each order, useful if users usually just order one Cocktail and you use the lock screen.
     - **Lock Screen**: User needs to scan his NFC to unlock the cocktail selection. Use this if you want to enforce first time scanning to filter/show only possible cocktails.
-    - **Show not possible cocktails**: Show all cocktails (not possible in another style), even if the user is not allowed to order them. might not be the best if you use age restrictions, since they will never be able to order them.
+    - **Show not possible cocktails**: Show all cocktails (not possible in another style), even if the user is not allowed to order them. Might not be the best if you use age restrictions, since they will never be able to order them.
 
 === "SumUp"
     - **Opt In**: Enable and select the SumUp payment integration.

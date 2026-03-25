@@ -53,7 +53,7 @@ Or you can use the v2 flag in the all in one installer script [as shown above](#
 !!! warning "Before starting"
     Before you start the update, make sure to backup your data.
     The update should not delete any data, but it is always better to be safe than sorry.
-    It is also recommended to have an up to date operating system.
+    It is also recommended to have an up-to-date operating system.
     If you installed CocktailBerry a long time ago, please do a clean install instead of updating.
 
 ```bash
@@ -87,7 +87,7 @@ cd ~/CocktailBerry
 uv run api.py remove-virtual-keyboard
 ```
 
-In case you have not enabled it via the command above, you can also disable it by removing over raspi-config.
+In case you have not enabled it via the command above, you can also disable it via raspi-config.
 
 ```bash
 sudo raspi-config
