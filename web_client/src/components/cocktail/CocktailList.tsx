@@ -105,7 +105,7 @@ const CocktailList: React.FC = () => {
   );
 
   return (
-    <div className='px-2 centered max-w-7xl'>
+    <div className='px-2 w-full max-w-7xl'>
       <div className={`w-full h-10 mb-2 sticky z-10 ${restrictedModeActive ? 'top-1' : 'top-10'}`}>
         {config.PAYMENT_TYPE === 'CocktailBerry' && <UserDisplay user={user} />}
         {config.WAITER_MODE && <WaiterDisplay waiter={effectiveWaiter} />}
