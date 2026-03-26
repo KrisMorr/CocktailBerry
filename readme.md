@@ -185,7 +185,7 @@ uv run fastapi dev ./src/api/api.py
 and run the web UI via:
 
 ```bash
-cd web_app/
+cd web_client/
 yarn install
 yarn dev
 ```
@@ -193,9 +193,9 @@ yarn dev
 ## Mocking RFID/NFC Reader and Services
 
 You can set the `MOCK_RFID` and `MOCK_PAYMENT_SERVICE` environment variables to use the mock implementations of the RFID reader and payment service respectively.
-This is useful if you want to develop this features without having the actual hardware or service available.
+This is useful if you want to develop these features without having the actual hardware or service available.
 
-The mocked NFC reader will cycle through two predefined IDs every minute, it will return each 5 seconds a read card id for testing purposes.
+The mocked NFC reader will cycle through two predefined IDs every minute. It will return a read card ID every 5 seconds for testing purposes.
 If you want to test specific behavior, it is recommended not to mock but use the real hardware.
 
 The mocked payment service will simulate successful payments without actually connecting to any external service.

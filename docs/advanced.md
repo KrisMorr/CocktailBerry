@@ -21,7 +21,7 @@
 
 ## Installation of Services
 
-Simply have `docker compose` installed and run either the CLI command or the docker compose command in the folder, where you specified the `docker-compose.yaml` file.
+Simply have `docker compose` installed and run either the CLI command or the docker compose command in the folder where you specified the `docker-compose.yaml` file.
 You will also find more information below about the specific services.
 
 ```bash
@@ -31,7 +31,7 @@ docker compose up --build -d # (3)!
 ```
 
 1. This is the recommended and easiest way!
-2. Just use this in case you want to use the team feature and also on the same device as CocktailBerry, I recommend at least an RPi 4 with 2GB RAM.
+2. Just use this in case you want to use the team feature and also on the same device as CocktailBerry. I recommend at least an RPi 4 with 2GB RAM.
 3. If you are an experienced docker user, feel free to do it yourself! If you got a quite old system, docker v1 may be installed. Best is to upgrade, but you can use `docker-compose` as a command.
 
 This will handle the setup of all docker services.

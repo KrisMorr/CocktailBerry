@@ -1,6 +1,6 @@
 # CocktailBerry Web Client
 
-This is the frontend for the CocktailBerry, using Vite, React, and TypeScript.
+This is the frontend for CocktailBerry, using Vite, React, and TypeScript.
 
 ## Getting Started
 

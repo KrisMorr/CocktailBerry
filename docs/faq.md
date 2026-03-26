@@ -54,7 +54,7 @@ In case of any issues related to the GUI (like window positioning, overlap), ple
 
 ### Which Raspberry Pi OS to Use
 
-Please use the latest Raspberry Pi Desktop OS, currently this is Raspberry Pi OS with desktop in 64 bit, also known as Debian 13 or Trixie.
+Please use the latest Raspberry Pi Desktop OS, currently this is Raspberry Pi OS with desktop in 64-bit, also known as Debian 13 or Trixie.
 CocktailBerry requires **Python 3.13 or newer** (Trixie ships with Python 3.13).
 Older OS may work, but are not supported.
 
@@ -123,7 +123,7 @@ On the right side (possible) are all known ingredients, currently not on the lef
 You can put them to the left side (available) or vice versa with the arrow buttons.
 Available means, that this ingredient exists / stands beside the maker, but is not connected to a pump.
 If a recipe has an ingredient, which should be added via hand / the user later, the machine knows it exists.
-So CocktailBerry can accurately offer only recipes where both, machine and hand ingredients are there.
+So CocktailBerry can accurately offer only recipes where both machine and hand ingredients are there.
 
 A little tip here: Ingredients connected to the pump are automatically added by the maker.
 Ingredients not connected but available will be the ones prompted to be added by hand.
