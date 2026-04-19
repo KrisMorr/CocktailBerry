@@ -31,7 +31,7 @@ else
 fi
 
 # Ask for the language setting early so we can configure the database and config later
-SUPPORTED_LANGUAGES=("en" "de")
+SUPPORTED_LANGUAGES=("en" "de" "pl")
 LANG_OPTIONS=$(IFS=', '; echo "${SUPPORTED_LANGUAGES[*]}")
 echo ""
 while true; do
@@ -212,7 +212,7 @@ fi
 echo "~~ Everything should be set now! Have fun with CocktailBerry :) ~~"
 echo "> Made by Andre Wohnsland and contributors with <3"
 echo "> Documentation is found at: https://docs.cocktailberry.org/"
-echo "> Source code at: https://github.com/AndreWohnsland/CocktailBerry"
+echo "> Source code at: https://github.com/KrisMorr/CocktailBerry"
 echo "> If you want to set up your microservice, check the docks for a complete guide. Docker and compose should already be installed."
 echo "> You can use the CocktailBerry CLI for an interactive setup. Use 'python ~/CocktailBerry/runme.py setup-microservice' to start."
 echo "> CocktailBerry will start at system start. To start it now, type 'bash ~/launcher.sh' or click the CocktailBerry icon."
