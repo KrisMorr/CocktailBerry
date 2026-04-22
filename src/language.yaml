@@ -403,16 +403,16 @@ ui:
       de: 'Maker'
     tab_ingredients:
       en: 'Ingredients'
-      de: 'Zutaten'
+      de: 'Składniki'
     tab_recipes:
       en: 'Recipes'
-      de: 'Rezepte'
+      de: 'Rezepty'
     tab_bottles:
       en: 'Bottles'
-      de: 'Flaschen'
+      de: 'Butelki'
     ingredient_label:
       en: 'Ingredient'
-      de: 'Zutat'
+      de: 'Składnik'
     alcohol_level_label:
       en: 'Alcohol'
       de: 'Alkohol'
@@ -558,13 +558,13 @@ ui:
   option_window:
     cleaning:
       en: 'Cleaning'
-      de: 'Reinigen'
+      de: 'Czyszczenie'
     config:
       en: 'Configuration'
-      de: 'Einstellungen'
+      de: 'Ustawienia'
     calibration:
       en: 'Calibration'
-      de: 'Kalibrierung'
+      de: 'Kalibracja'
     data:
       en: 'Data'
       de: 'Daten'
@@ -576,7 +576,7 @@ ui:
       de: 'Wiederherstellen'
     reboot:
       en: 'Reboot'
-      de: 'Neustart'
+      de: 'Uruchom ponownie'
     shutdown:
       en: 'Shutdown'
       de: 'Herunterfahren'
@@ -970,7 +970,7 @@ ui:
   calibration_window:
     header:
       en: 'Pump Calibration'
-      de: 'Pumpen Kalibrieren'
+      de: 'Kalibracja pompy'
     pump_number:
       en: 'Pump'
       de: 'Pumpe'
@@ -1096,7 +1096,7 @@ ui:
       de: 'Rezepte'
     permission_bottles:
       en: 'Bottles'
-      de: 'Flaschen'
+      de: 'Butelki'
     permission_options:
       en: 'Options'
       de: 'Optionen'
@@ -1120,7 +1120,7 @@ ui:
       de: 'Löschen'
     save:
       en: 'Save'
-      de: 'Speichern'
+      de: 'Zapisz'
     cancel:
       en: 'Cancel'
       de: 'Abbrechen'
