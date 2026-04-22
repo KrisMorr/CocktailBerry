@@ -1,5 +1,5 @@
 #!/bin/bash
-# Usage: wget -O - https://raw.githubusercontent.com/AndreWohnsland/CocktailBerry/master/scripts/all_in_one.sh | bash [-s v2]
+# Usage: wget -O - https://raw.githubusercontent.com/KrisMorr/CocktailBerry/dev/scripts/all_in_one.sh | bash [-s v2]
 
 # Parse arguments
 V2_FLAG=false
@@ -23,7 +23,7 @@ done
 
 # Welcome and system updates
 echo "~~~~~~~ CocktailBerry All In One Installation Script ~~~~~~~~"
-echo "> Source taken from: https://raw.githubusercontent.com/AndreWohnsland/CocktailBerry/master/scripts/all_in_one.sh"
+echo "> Source taken from: https://raw.githubusercontent.com/KrisMorr/CocktailBerry/dev/scripts/all_in_one.sh"
 if [[ "$V2_FLAG" = true ]]; then
   echo "> You are installing the v2 (Web) version of CocktailBerry"
 else
@@ -151,7 +151,7 @@ if [[ -d ~/CocktailBerry ]]; then
   sudo rm -rf ~/CocktailBerry
 fi
 
-git clone https://github.com/AndreWohnsland/CocktailBerry.git
+git clone -b dev https://github.com/KrisMorr/CocktailBerry.git
 # shellcheck disable=SC2164
 cd ~/CocktailBerry
 # if in dev mode, checkout the dev branch
