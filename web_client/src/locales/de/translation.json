@@ -2,7 +2,7 @@
   "new": "Neu",
   "create": "Erstellen",
   "apply": "Anwenden",
-  "save": "zapisz",
+  "save": "Speichern",
   "delete": "Löschen",
   "edit": "Bearbeiten",
   "submit": "Absenden",
@@ -27,7 +27,7 @@
     "ingredients": "Zutaten",
     "recipes": "Rezepte",
     "bottles": "Flaschen",
-    "options": "Opcje"
+    "options": "Optionen"
   },
   "cocktails": {
     "goToBottles": "Zu den Flaschen",
