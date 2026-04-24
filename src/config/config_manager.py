@@ -49,8 +49,8 @@ from src.utils import get_platform_data
 _logger = LoggerHandler("config_manager")
 
 
-_default_pins = [14, 15, 18, 23, 24, 25, 8, 7, 17, 27]
-_default_volume_flow = [30.0] * 10
+_default_pins = [17, 27, 22, 10, 9, 11, 5, 6]
+_default_volume_flow = [20.0] * 10
 
 
 class Tab(IntEnum):
@@ -78,7 +78,7 @@ class ConfigManager:
     # specify which of the tabs will be locked
     UI_LOCKED_TABS: ClassVar[list[bool]] = [False, True, True, True]
     # Language to use, use two chars look up documentation, if not provided fallback to en
-    UI_LANGUAGE: SupportedLanguagesType = "en"
+    UI_LANGUAGE: SupportedLanguagesType = "pl"
     # Width and height of the touchscreen
     # Mainly used for dev and comparison for the desired touch dimensions
     UI_WIDTH: int = 800
@@ -97,11 +97,11 @@ class ConfigManager:
     # Number of bottles possible at the machine
     MAKER_NUMBER_BOTTLES: int = 8
     # Volume options to choose from when preparing a cocktail
-    MAKER_PREPARE_VOLUME: ClassVar[list[int]] = [150, 250, 350]
+    MAKER_PREPARE_VOLUME: ClassVar[list[int]] = [150, 180]
     # Number of pumps parallel in production
-    MAKER_SIMULTANEOUSLY_PUMPS: int = 16
+    MAKER_SIMULTANEOUSLY_PUMPS: int = 8
     # Time in seconds to execute clean program
-    MAKER_CLEAN_TIME: int = 20
+    MAKER_CLEAN_TIME: int = 5
     # Base multiplier for alcohol in the recipe
     MAKER_ALCOHOL_FACTOR: int = 100
     # Reversion for cleaning
@@ -113,7 +113,7 @@ class ConfigManager:
     # Theme Setting to load according qss file
     MAKER_THEME: SupportedThemesType = "default"
     # How many ingredients are allowed to be added by hand to be available cocktail
-    MAKER_MAX_HAND_INGREDIENTS: int = 3
+    MAKER_MAX_HAND_INGREDIENTS: int = 1
     # Flag to check if internet is up at start
     MAKER_CHECK_INTERNET: bool = True
     # Option to not scale the recipe volume but use always the defined one
@@ -582,7 +582,7 @@ def version_callback(value: bool) -> None:
         typer.echo(f"{PROJECT_NAME} Version {__version__}. Created by Andre Wohnsland.")
         typer.echo(get_platform_data())
         typer.echo(r"For more information visit the docs: https://cocktailberry.readthedocs.io")
-        typer.echo(r"Or the GitHub: https://github.com/AndreWohnsland/CocktailBerry.")
+        typer.echo(r"Or the GitHub: https://github.com/KrisMorr/CocktailBerry.")
         raise typer.Exit()
 
 
