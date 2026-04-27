@@ -1,6 +1,6 @@
 [project]
 name = "CocktailBerry"
-version = "3.3.0"
+version = "4.0.0"
 description = "A Python and Qt based App for a Cocktail Machine on a Raspberry Pi. Easily serve Cocktails with Raspberry Pi and Python"
 authors = [{ name= "Andre Wohnsland" , email =  "info@cocktailberry.org" }]
 readme = "readme.md"
@@ -40,12 +40,12 @@ dependencies = [
 dev = [
   "mkdocs-material>=9.7.6",
   "ipykernel>=7.2.0",
-  "pytest>=9.0.2",
+  "pytest>=9.0.3",
   "pytest-cov>=7.1.0",
   "pre-commit>=4.5.1",
-  "ty==0.0.27",
-  "ruff>=0.15.8",
-  "zensical>=0.0.30",
+  "ty==0.0.32",
+  "ruff>=0.15.12",
+  "zensical>=0.0.36",
 ]
 
 [project.optional-dependencies]
@@ -137,6 +137,7 @@ include = [
   "src/machine/leds.py",
   "src/machine/dispensers/stepper.py",
   "src/machine/scale/hx711.py",
+  "src/machine/scale/hx711_custom.py",
   "src/machine/scale/nau7802.py",
 ]
 rules = { unresolved-import = "ignore", invalid-type-form = "ignore", unresolved-attribute = "ignore", possibly-missing-attribute = "ignore" }
