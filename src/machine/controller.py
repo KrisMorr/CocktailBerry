@@ -18,9 +18,10 @@ from src.machine.dispensers import create_dispenser
 from src.machine.dispensers.base import BaseDispenser
 from src.machine.dispensers.scheduler import DispenserScheduler, PreparationItem
 from src.machine.hardware import HardwareContext
-from src.machine.leds import LedController
+from src.machine.leds import LedController, create_led_controller
 from src.machine.pin_controller import PinController
 from src.machine.reverter import Reverter
+from src.machine.rfid import RFIDReader, create_rfid
 from src.machine.scale import create_scale
 from src.models import CocktailStatus, EventType, Ingredient, PreparationResult, PrepareResult
 from src.programs.addons.hardware_extensions import HARDWARE_ADDONS
@@ -55,6 +56,9 @@ class MachineController:
             led_controller=LedController(),
             extra=HARDWARE_ADDONS.create_all(),
         )
+        # Stage 1b: populate the LED controller singleton from cfg.LED_CONFIG.
+        # LEDs need PinController + extra and are reachable by every later stage.
+        create_led_controller(cfg.LED_CONFIG, self.hardware)
         # Stage 2: scale can access pins, leds, extra
         self.hardware.scale = create_scale(cfg.SCALE_CONFIG, self.hardware)
         # Stage 3: carriage can access pins, leds, extra, AND scale
@@ -62,6 +66,9 @@ class MachineController:
         # call :meth:`find_carriage_reference` from the caller after the GUI/API is ready,
         # wrapping it in a spinner/progress indicator as appropriate for the version.
         self.hardware.carriage = create_carriage(cfg.CARRIAGE_CONFIG, self.hardware)
+        # Stage 4: RFID can access pins, leds, extra, scale, AND carriage
+        self.hardware.rfid = create_rfid(cfg.RFID_CONFIG, self.hardware)
+        RFIDReader().attach(self.hardware.rfid)
         self.reverter = Reverter(cfg.MAKER_PUMP_REVERSION_CONFIG)
         self.set_up_pumps()
         self.default_led()

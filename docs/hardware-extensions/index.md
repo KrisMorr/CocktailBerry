@@ -10,10 +10,12 @@ Hardware extensions live in subfolders of the `addons` folder and are automatica
 
 Supported types are:
 
-- **[Hardware context extensions](hardware-context.md)** — shared hardware instances accessible to dispensers and other code via the `HardwareContext` (e.g. UART boards, SPI buses, custom controllers)
-- **[Dispensers](dispensers.md)** — control pumps and valves for dispensing liquids
+- **[Hardware Context Extensions](hardware-context.md)** — shared hardware instances accessible to dispensers and other code via the `HardwareContext` (e.g. UART boards, SPI buses, custom controllers)
 - **[Scales](scales.md)** — read weight measurements for weight-based recipes and estimation
 - **[Carriages](carriages.md)** — control the movement of the pump carriage for multi-position setups
+- **[Dispensers](dispensers.md)** — control pumps and valves for dispensing liquids
+- **[RFID Readers](rfid.md)** — read NFC/RFID cards for payments, waiter mode, or custom flows
+- **[LEDs](leds.md)** — drive indicator/lighting hardware for status, ambience, and preparation effects
 
 Best way to start is use the CLI commands to create skeleton files for your extensions, then fill in the implementation details.
 See the subpages for detailed guides and examples for each type.
@@ -24,14 +26,15 @@ The diagram below shows how the different extension types relate to each other a
 
 ```mermaid
 flowchart TD
-    subgraph stage1["1. Core/Shared Hardware"]
+    subgraph stage1["1. Core/Shared Hardware + LEDs"]
         pin["PinController"]
-        led["LedController"]
         hw_ext["Hardware Extensions\n(addons/hardware/)"]
+        leds["LEDs\n(addons/leds/)"]
         pin --> hctx
-        led --> hctx
         hw_ext --> hctx
         hctx["HardwareContext\ncreated"]
+        hctx --> leds
+        leds --> hctx_leds["HardwareContext\n(+ leds populated)"]
     end
 
     stage1 -->|"HardwareContext passed"| stage2
@@ -48,9 +51,16 @@ flowchart TD
         carriage --> hctx3["HardwareContext\n(+ carriage)"]
     end
 
-    stage3 -->|"HardwareContext passed"| dispensers
+    stage3 -->|"HardwareContext passed"| stage4
 
-    subgraph dispensers["4. Dispensers creation (one per slot)"]
+    subgraph stage4["4. RFID creation"]
+        rfid["RFID reader\n(addons/rfid/)"]
+        rfid --> hctx4["HardwareContext\n(+ rfid)"]
+    end
+
+    stage4 -->|"HardwareContext passed"| dispensers
+
+    subgraph dispensers["5. Dispensers creation (one per slot)"]
         custom["Dispenser\n(addons/dispensers/)"]
     end
 ```
@@ -59,10 +69,11 @@ flowchart TD
 
 The `HardwareContext` is built up in stages, so each component has access to everything created before it:
 
-1. **Core hardware** — `PinController`, `LedController`, and hardware extension instances (`extra` dict) are created first.
+1. **Core hardware + LEDs** — `PinController`, hardware extension instances (`extra` dict), and the `HardwareContext` itself are created first. The `LedController` singleton is then populated from `LED_CONFIG` so every later stage already sees the active LED list.
 2. **Scale** — receives the context, so it can access pins, LEDs, and hardware extensions if needed.
 3. **Carriage** — receives the context including the scale, so it can access everything above.
-4. **Dispensers** — each slot gets the fully assembled context.
+4. **RFID** — receives the context including scale and carriage; the resulting controller is also attached to the `RFIDReader()` singleton facade.
+5. **Dispensers** — each slot gets the fully assembled context.
 
 ## Extension Structure
 
