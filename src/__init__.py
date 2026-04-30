@@ -3,7 +3,7 @@ from typing import Literal
 __version__ = "4.0.0"
 PROJECT_NAME = "CocktailBerry"
 MAX_SUPPORTED_BOTTLES = 24
-SupportedLanguagesType = Literal["en", "de"]
+SupportedLanguagesType = Literal["en", "de", "pl"]
 SupportedThemesType = Literal["default", "bavaria", "alien", "berry", "tropical", "purple", "custom"]
 SupportedRfidType = Literal["MFRC522", "USB"]
 SupportedPaymentOptions = Literal["Disabled", "CocktailBerry", "SumUp"]
