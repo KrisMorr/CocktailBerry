@@ -29,7 +29,7 @@ sudo chmod 440 "$SUDOERS_FILE"
 
 # Welcome and system updates
 echo "~~~~~~~ CocktailBerry All In One Installation Script ~~~~~~~~"
-echo "> Source taken from: https://raw.githubusercontent.com/KrisMorr/CocktailBerry/dev/scripts/all_in_one.sh"
+echo "> Source taken from: https://raw.githubusercontent.com/KrisMorr/CocktailBerry/master/scripts/all_in_one.sh"
 if [[ "$V2_FLAG" = true ]]; then
   echo "> You are installing the v2 (Web) version of CocktailBerry"
 else
@@ -157,7 +157,7 @@ if [[ -d ~/CocktailBerry ]]; then
   sudo rm -rf ~/CocktailBerry
 fi
 
-git clone -b dev https://github.com/KrisMorr/CocktailBerry.git
+git clone https://github.com/KrisMorr/CocktailBerry.git
 # shellcheck disable=SC2164
 cd ~/CocktailBerry
 # if in dev mode, checkout the dev branch
